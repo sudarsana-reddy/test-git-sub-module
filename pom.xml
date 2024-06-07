@@ -12,4 +12,8 @@
 
     </properties>
 
+    <modules>
+        <module>git-sub-module</module>
+    </modules>
+
 </project>
