@@ -4,7 +4,7 @@
 
     <groupId>org.sud</groupId>
     <artifactId>test-git-sub-module</artifactId>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
