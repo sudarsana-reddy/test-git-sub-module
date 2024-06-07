@@ -1,0 +1,19 @@
+name: Test git submodule
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: build
+        shell: bash
+        run: |
+          git submodule init
+          git submodule update
+          mvn -B verify --file pom.xml
+       
