@@ -9,12 +9,13 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
-        with:
-          submodules: true
-          token: ${{ secrets.PAT }}
+        # with:
+        #   submodules: true
+        #   token: ${{ secrets.PAT }}
 
       - name: build
         shell: bash
         run: |
-          mvn -B verify --file pom.xml
-       
+          TOKEN=${{ secrets.PAT }}
+          git submoudle update --init --recursive --config "submodule.git-sub-module.url=https://$TOKEN@github.com/sudarsana-reddy/git-sub-module.git"
+          mvn -B verify --file pom.xml     
