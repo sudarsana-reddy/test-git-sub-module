@@ -12,6 +12,8 @@ jobs:
 
       - name: build
         shell: bash
+        env:
+          PAT: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git submodule init
           git submodule update
