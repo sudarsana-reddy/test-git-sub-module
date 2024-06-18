@@ -13,15 +13,10 @@ jobs:
         #   submodules: true
         #   token: ${{ secrets.PAT }}
 
-      - name: config
-        shell: bash
-        run: |
-          TOKEN=${{ secrets.PAT }}
-          git -c submodule.git-sub-module.url=https://$TOKEN@github.com/sudarsana-reddy/git-sub-module.git        
-
+    
       - name: build
         shell: bash
         run: |
           TOKEN=${{ secrets.PAT }}
-          git submodule update --init --recursive
+          git c submodule.git-sub-module.url=https://$TOKEN@github.com/sudarsana-reddy/git-sub-module.git submodule update --init --recursive
           mvn -B verify --file pom.xml
