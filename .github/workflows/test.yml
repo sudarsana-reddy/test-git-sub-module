@@ -12,7 +12,7 @@ jobs:
         with:
           submodules: true
           token: ${{ secrets.PAT }}
-          persist-credentials: false
+          # persist-credentials: false
 
       - name: sync code to github-with-sub-complete-repo
         shell: bash       
@@ -25,10 +25,10 @@ jobs:
           ls -ltr
           echo "Setting remote add"
           git remote add adobe https://github.com/sudarsana-reddy/github-with-sub-complete-repo.git
-          echo "set username"
-          git config credential.username sudarsana.ala@gmail.com
-          echo "set password"
-          git config credential.helper "!echo password=${{ secrets.TOKEN }}; echo"
+          # echo "set username"
+          # git config credential.username sudarsana.ala@gmail.com
+          # echo "set password"
+          # git config credential.helper "!echo password=${{ secrets.TOKEN }}; echo"
           echo "show remote urls"
           git remote -v
           echo "checking out main"
