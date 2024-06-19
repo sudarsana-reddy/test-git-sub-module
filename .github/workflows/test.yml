@@ -18,13 +18,14 @@ jobs:
         run: |
           ls -ltr
           git rm --cached .gitmodules
+          rm -f .gitmodules
           ls -ltr
           cd git-sub-module
           ls -ltr
           echo "Setting remote add"
           git remote add newrepo https://github.com/sudarsana-reddy/github-with-sub-complete-repo.git
           echo "set username"
-          git config credential.username sudarsana-reddy
+          git config credential.username sudarsana.ala@gmail.com
           echo "set password"
           git config credential.helper "!echo password=${{ secrets.PAT }}; echo"
           echo "show remote urls"
@@ -34,7 +35,7 @@ jobs:
           echo "pull the chages"
           git pull
           echo "push the changes to remote"
-          git push -f -u newrepo main
+          git push -u newrepo main --force
     
       - name: build
         shell: bash
