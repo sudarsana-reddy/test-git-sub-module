@@ -18,8 +18,11 @@ jobs:
         shell: bash       
         run: |
           ls -ltr
+          git log --format="%an : %s" -n 1 > commit.txt
+          cat commit.txt
           git rm --cached .gitmodules
           rm -f .gitmodules
+          rm -rf .git
           ls -ltr
           cd git-sub-module
           ls -ltr
