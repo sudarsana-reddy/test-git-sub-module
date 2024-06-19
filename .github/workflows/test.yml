@@ -42,6 +42,7 @@ jobs:
           echo "check local git issues"
           git fsck --full
           echo "push the changes to remote"
+          git remote set-url --push adobe "https://sudarsana-reddy:${{ secrets.PAT }}@github.com/username/target-repo.git"
           git push -u adobe main --force
     
       - name: build
