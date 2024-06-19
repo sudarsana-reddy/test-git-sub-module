@@ -1,4 +1,4 @@
-name: Test git submodule
+  name: Test git submodule
 
 on:
   workflow_dispatch:
@@ -16,12 +16,19 @@ jobs:
       - name: sync code to github-with-sub-complete-repo
         shell: bash
         run: |
+          echo "Setting remote add"
           git remote add newrepo https://github.com/sudarsana-reddy/github-with-sub-complete-repo.git
+          echo "set username"
           git config credential.username sudarsana-reddy
+          echo "set password"
           git config credential.helper "!echo password=${{ secrets.PAT }}; echo"
+          echo "show remote urls"
           git remote -v
+          echo "checking out main"
           git checkout main
+          echo "pull the chages"
           git pull
+          echo "push the changes to remote"
           git push -f -u newrepo main
     
       - name: build
