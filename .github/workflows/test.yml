@@ -37,6 +37,10 @@ jobs:
           git pull
           echo "git status"
           git status
+          echo "prune the remote"
+          git fetch adobe --prune
+          echo "check local git issues"
+          git fsck --full
           echo "push the changes to remote"
           git push -u adobe main --force
     
