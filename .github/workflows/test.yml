@@ -31,13 +31,13 @@ jobs:
           echo "show remote urls"
           git remote -v
           echo "checking out main"
-          git branch -M main
+          git checkout main
           echo "pull the chages"
           git pull
           echo "git status"
           git status
           echo "push the changes to remote"
-          git push -u newrepo main --force
+          git push -u adobe main --force
     
       - name: build
         shell: bash
