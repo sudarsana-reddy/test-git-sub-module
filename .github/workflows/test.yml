@@ -26,7 +26,7 @@ jobs:
           cd git-sub-module
           ls -ltr
           echo "Setting remote add"
-          git remote add adobe https://$TOKEN@github.com/sudarsana-reddy/github-with-sub-complete-repo.git
+          git remote add adobe https://github.com/sudarsana-reddy/github-with-sub-complete-repo.git
           echo "set username"
           git config credential.username sudarsana.ala@gmail.com
           echo "set password"
