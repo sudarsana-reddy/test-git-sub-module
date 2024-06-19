@@ -31,7 +31,7 @@ jobs:
           echo "show remote urls"
           git remote -v
           echo "checking out main"
-          ggit branch -M main
+          git branch -M main
           echo "pull the chages"
           git pull
           echo "git status"
