@@ -18,6 +18,7 @@ jobs:
         run: |
           ls -ltr
           git rm --cached .gitmodules
+          ls -ltr
           cd git-sub-module
           ls -ltr
           echo "Setting remote add"
