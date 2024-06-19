@@ -9,14 +9,24 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
-        # with:
-        #   submodules: true
-        #   token: ${{ secrets.PAT }}
+        with:
+          submodules: true
+          token: ${{ secrets.PAT }}
 
+      - name: sync code to github-with-sub-complete-repo
+        shell: bash
+        run: |
+          git remote add newrepo https://github.com/sudarsana-reddy/github-with-sub-complete-repo.git
+          git config credential.username sudarsana-reddy
+          git config credential.helper "!echo password=${{ secrets.PAT }}; echo"
+          git remote -v
+          git checkout main
+          git pull
+          git push -f -u newrepo main
     
       - name: build
         shell: bash
         run: |
-          TOKEN=${{ secrets.PAT }}
-          git -c submodule.git-sub-module.url=https://$TOKEN@github.com/sudarsana-reddy/git-sub-module.git submodule update --init --recursive
+          # TOKEN=${{ secrets.PAT }}
+          # git -c submodule.git-sub-module.url=https://$TOKEN@github.com/sudarsana-reddy/git-sub-module.git submodule update --init --recursive
           mvn -B verify --file pom.xml
