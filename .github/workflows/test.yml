@@ -23,7 +23,7 @@ jobs:
           cd git-sub-module
           ls -ltr
           echo "Setting remote add"
-          git remote add newrepo https://github.com/sudarsana-reddy/github-with-sub-complete-repo.git
+          git remote add adobe https://github.com/sudarsana-reddy/github-with-sub-complete-repo.git
           echo "set username"
           git config credential.username sudarsana.ala@gmail.com
           echo "set password"
@@ -31,7 +31,7 @@ jobs:
           echo "show remote urls"
           git remote -v
           echo "checking out main"
-          git checkout main
+          ggit branch -M main
           echo "pull the chages"
           git pull
           echo "git status"
