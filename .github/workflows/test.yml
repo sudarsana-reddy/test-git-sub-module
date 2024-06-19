@@ -1,4 +1,4 @@
-  name: Test git submodule
+name: Test git submodule
 
 on:
   workflow_dispatch:
