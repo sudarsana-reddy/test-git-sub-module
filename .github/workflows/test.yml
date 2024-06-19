@@ -15,9 +15,7 @@ jobs:
           persist-credentials: false
 
       - name: sync code to github-with-sub-complete-repo
-        shell: bash
-        env:
-          TOKEN: ${{ secrets.PAT }}
+        shell: bash       
         run: |
           ls -ltr
           git rm --cached .gitmodules
@@ -30,7 +28,7 @@ jobs:
           echo "set username"
           git config credential.username sudarsana.ala@gmail.com
           echo "set password"
-          git config credential.helper "!echo password=$TOKEN; echo"
+          git config credential.helper "!echo password=${{ secrets.TOKEN }}; echo"
           echo "show remote urls"
           git remote -v
           echo "checking out main"
