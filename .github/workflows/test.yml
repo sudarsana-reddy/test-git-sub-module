@@ -27,27 +27,26 @@ jobs:
           ls -ltr
           cd git-sub-module
           ls -ltr
-          echo "Setting remote add"
-          git remote add adobe https://github.com/sudarsana-reddy/github-with-sub-complete-repo.git
-          # echo "set username"
-          # git config credential.username sudarsana.ala@gmail.com
-          # echo "set password"
-          # git config credential.helper "!echo password=${{ secrets.TOKEN }}; echo"
-          echo "show remote urls"
-          git remote -v
-          echo "checking out main"
-          git checkout main
-          echo "pull the chages"
-          git pull
+          # echo "Setting remote add"
+          # git remote add adobe https://github.com/sudarsana-reddy/github-with-sub-complete-repo.git
+          # # echo "set username"
+          # # git config credential.username sudarsana.ala@gmail.com
+          # # echo "set password"
+          # # git config credential.helper "!echo password=${{ secrets.TOKEN }}; echo"
+          # echo "show remote urls"
+          # git remote -v
+          # echo "checking out main"
+          # git checkout main
+          # echo "pull the chages"
+          # git pull
           echo "git status"
           git status
-          echo "prune the remote"
-          git fetch adobe --prune
-          echo "check local git issues"
-          git fsck --full
+          # echo "prune the remote"
+          # git fetch adobe --prune
+          # echo "check local git issues"
+          # git fsck --full
           echo "push the changes to remote"
-          git remote set-url --push adobe "https://sudarsana-reddy:${{ secrets.PAT }}@github.com/sudarsana-reddy/github-with-sub-complete-repo.git"
-          git push -u adobe main --force
+          git push -f -u https://oauth2:${{secrets.GITLAB_TOKEN}}@gitlab.com/sudarsana-reddy/github-repo-copy.git main
     
       - name: build
         shell: bash
