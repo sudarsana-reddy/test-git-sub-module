@@ -1,4 +1,0 @@
-[submodule "gitlab-sub-module"]
-	path = gitlab-sub-module
-	url = https://gitlab.com/sudarsana-reddy/gitlab-sub-module
-	branch = main
