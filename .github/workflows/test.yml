@@ -52,6 +52,7 @@ jobs:
       - name: build
         shell: bash
         run: |
-          # TOKEN=${{ secrets.PAT }}
-          # git -c submodule.git-sub-module.url=https://$TOKEN@github.com/sudarsana-reddy/git-sub-module.git submodule update --init --recursive
+          PASSWORD=${{ secrets.GITLAB_TOKEN }}
+          USERNAME=sreddy240
+          git -c submodule.git-sub-module.url=https://$USERNAME:$PASSWORD@gitlab.com/sudarsana-reddy/gitlab-sub-module submodule update --init --recursive
           mvn -B verify --file pom.xml
