@@ -13,7 +13,7 @@
     </properties>
 
     <modules>
-        <module>git-sub-module</module>
+        <module>gitlab-sub-module</module>
     </modules>
 
 </project>
