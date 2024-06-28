@@ -21,5 +21,5 @@ jobs:
           PASSWORD=${{ secrets.GITLAB_TOKEN }}
           USERNAME=sreddy240
           git submodule set-url gitlab-sub-module https://$USERNAME:$PASSWORD@gitlab.com/sudarsana-reddy/gitlab-sub-module
-          git submodule update --init
+          git submodule update --init --remote
           mvn -B verify --file pom.xml
