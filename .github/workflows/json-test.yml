@@ -12,7 +12,7 @@ jobs:
         run: |
           echo "checking jq"
           jq --version
-          errors_json='["a": "apple"]'
+          errors_json='[{"a": "apple"}]'
           data='{
             "b": "ball"
           }'
