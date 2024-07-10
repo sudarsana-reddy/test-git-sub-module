@@ -7,16 +7,12 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: test
-        shell: bash
+      - name: test        
         run: |
           errors_json='["a": "apple"]'
-
           data='{
             "b": "ball"
           }'
-
           modified_data=(echo "$data" | jq --argjson errors "errors_json" '. + { errors: $errors}')
-
           echo "$modified_data"
     
