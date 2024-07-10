@@ -10,6 +10,8 @@ jobs:
       - name: test  
         shell: bash
         run: |
+          echo "checking jq"
+          jq --version
           errors_json='["a": "apple"]'
           data='{
             "b": "ball"
