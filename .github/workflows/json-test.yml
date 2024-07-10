@@ -13,6 +13,6 @@ jobs:
           data='{
             "b": "ball"
           }'
-          modified_data=(echo "$data" | jq --argjson errors "errors_json" '. + { errors: $errors}')
+          modified_data=(jq --argjson errors "errors_json" '. + { errors: $errors}' <<<"$data")
           echo "$modified_data"
     
