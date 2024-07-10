@@ -1,0 +1,22 @@
+name: JSOn Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test
+        shell: bash
+        run: |
+          errors_json='["a": "apple"]'
+
+          data='{
+            "b": "ball"
+          }'
+
+          modified_data=(echo $data | jq --argjson errors "errors_json" '. + { errors: $errors}')
+
+          echo "$modified_data"
+    
